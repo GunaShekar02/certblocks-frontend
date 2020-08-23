@@ -22,7 +22,7 @@ const LandingPage = () => {
             signed using cryptography, stored on IPFS(Interplanetary File
             System) and record on Blockchain.
           </p>
-          <Button title="Let's Go!" />
+          <Button title="Let's Go!" className={styles.button} />
         </div>
       </div>
     </div>
