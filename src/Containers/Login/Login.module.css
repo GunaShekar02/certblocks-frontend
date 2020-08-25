@@ -41,3 +41,30 @@
   padding: 10px;
   font-size: 20px;
 }
+
+@media only screen and (max-width: 1024px) {
+  .loginContainer {
+    width: 50vw;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .loginContainer {
+    width: 80vw;
+  }
+
+  .logo {
+    height: 50px;
+    width: 50px;
+    margin-top: -45px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .input {
+    height: 30px;
+    font-size: 16px;
+  }
+}
