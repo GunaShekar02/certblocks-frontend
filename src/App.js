@@ -1,6 +1,6 @@
 import React from "react";
 
-import LandingPage from "./Containers/LandingPage/LandingPage";
+import Login from "./Containers/Login/Login";
 
 import Navbar from "./Components/Navbar/Navbar";
 
@@ -8,7 +8,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <LandingPage />
+      <Login />
     </>
   );
 };
