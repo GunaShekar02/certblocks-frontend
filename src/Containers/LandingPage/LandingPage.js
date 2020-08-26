@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 import Button from "../../Components/Button/Button";
 
@@ -7,6 +8,8 @@ import styles from "./LandingPage.module.css";
 import { ReactComponent as HeroImage } from "../../assets/images/hero.svg";
 
 const LandingPage = () => {
+  const history = useHistory();
+
   return (
     <div className={styles.container}>
       <div>
@@ -22,7 +25,11 @@ const LandingPage = () => {
             signed using cryptography, stored on IPFS(Interplanetary File
             System) and record on Blockchain.
           </p>
-          <Button title="Let's Go!" className={styles.button} />
+          <Button
+            title="Let's Go!"
+            className={styles.button}
+            onClick={() => history.push("/verify")}
+          />
         </div>
       </div>
     </div>

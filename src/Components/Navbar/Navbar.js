@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { useHistory } from "react-router-dom";
 
 import styles from "./Navbar.module.css";
 
@@ -7,6 +8,8 @@ import { ReactComponent as Logo } from "../../assets/images/logo.svg";
 import useMediaQuery from "../../utils/useMediaQuery";
 
 const Navbar = () => {
+  const history = useHistory();
+
   const isMobile = useMediaQuery("(max-width: 700px)");
   const [showMobileNav, setShowMobileNav] = useState(false);
   const hamburger = useRef();
@@ -41,7 +44,7 @@ const Navbar = () => {
   return (
     <>
       <div className={styles.navbar}>
-        <div className={styles.brand}>
+        <div className={styles.brand} onClick={() => history.push("/")}>
           <Logo className={styles.logo} />
           <h1 className={styles.title}>Certblocks</h1>
         </div>
@@ -57,16 +60,37 @@ const Navbar = () => {
           </div>
         ) : (
           <div className={styles.links}>
-            <h2>Issue Certificates</h2>
-            <h2>Verify Certificate</h2>
-            <h2>Find your Certificate</h2>
+            <h2 onClick={() => history.push("/issue")}>Issue Certificates</h2>
+            <h2 onClick={() => history.push("/verify")}>Verify Certificate</h2>
+            <h2 onClick={() => history.push("/find")}>Find your Certificate</h2>
           </div>
         )}
       </div>
       <div className={styles.mobileLinks} ref={mobileMenu}>
-        <h2>Issue Certificates</h2>
-        <h2>Verify Certificate</h2>
-        <h2>Find your Certificate</h2>
+        <h2
+          onClick={() => {
+            history.push("/issue");
+            handleHamburgerClick();
+          }}
+        >
+          Issue Certificates
+        </h2>
+        <h2
+          onClick={() => {
+            history.push("/verify");
+            handleHamburgerClick();
+          }}
+        >
+          Verify Certificate
+        </h2>
+        <h2
+          onClick={() => {
+            history.push("/find");
+            handleHamburgerClick();
+          }}
+        >
+          Find your Certificate
+        </h2>
       </div>
     </>
   );
