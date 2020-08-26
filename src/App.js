@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import LandingPage from "./Containers/LandingPage/LandingPage";
 import Login from "./Containers/Login/Login";
 import Issue from "./Containers/Issue/Issue";
-import ProtectedRoute from "./Containers/ProtectedRoute/ProtectedRoute";
+// import ProtectedRoute from "./Containers/ProtectedRoute/ProtectedRoute";
 import Verify from "./Containers/Verify/Verify";
 import Find from "./Containers/Find/Find";
 
