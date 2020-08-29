@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 
 import styles from "./Navbar.module.css";
@@ -7,7 +7,11 @@ import { ReactComponent as Logo } from "../../assets/images/logo.svg";
 
 import useMediaQuery from "../../utils/useMediaQuery";
 
+import { AuthContext } from "../../utils/Store";
+
 const Navbar = () => {
+  const [auth] = useContext(AuthContext);
+
   const history = useHistory();
 
   const isMobile = useMediaQuery("(max-width: 700px)");
@@ -41,12 +45,21 @@ const Navbar = () => {
     }
   };
 
+  useEffect(() => {
+    const storageListener = () => {
+      console.log("LISTENER CALLED");
+      console.log(sessionStorage.getItem("apikey"));
+    };
+    window.addEventListener("storage", storageListener);
+
+    return () => window.removeEventListener("storage", storageListener);
+  }, []);
   return (
     <>
       <div className={styles.navbar}>
         <div className={styles.brand} onClick={() => history.push("/")}>
           <Logo className={styles.logo} />
-          <h1 className={styles.title}>Certblocks</h1>
+          <h1 className={styles.title}>Certblocks {auth ? "- Admin" : null}</h1>
         </div>
         {isMobile ? (
           <div

@@ -4,9 +4,10 @@ import { Switch, Route } from "react-router-dom";
 import LandingPage from "./Containers/LandingPage/LandingPage";
 import Login from "./Containers/Login/Login";
 import Issue from "./Containers/Issue/Issue";
-// import ProtectedRoute from "./Containers/ProtectedRoute/ProtectedRoute";
+import ProtectedRoute from "./Containers/ProtectedRoute/ProtectedRoute";
 import Verify from "./Containers/Verify/Verify";
 import Find from "./Containers/Find/Find";
+import Display from "./Containers/Display/Display";
 
 import Navbar from "./Components/Navbar/Navbar";
 
@@ -22,15 +23,18 @@ const App = () => {
           <Login />
         </Route>
         <Route exact path="/issue">
-          {/* <ProtectedRoute> */}
-          <Issue />
-          {/* </ProtectedRoute> */}
+          <ProtectedRoute>
+            <Issue />
+          </ProtectedRoute>
         </Route>
         <Route exact path="/verify">
           <Verify />
         </Route>
         <Route exact path="/find">
           <Find />
+        </Route>
+        <Route exact path="/display">
+          <Display />
         </Route>
       </Switch>
     </>
