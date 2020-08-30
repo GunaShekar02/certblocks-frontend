@@ -23,7 +23,7 @@ const LandingPage = () => {
             Certblocks is your go-to destination for creating, issuing, sharing,
             validating and verifying certificates. Certificates are digitally
             signed using cryptography, stored on IPFS(Interplanetary File
-            System) and record on Blockchain.
+            System) and recorded on Blockchain.
           </p>
           <Button
             title="Let's Go!"
