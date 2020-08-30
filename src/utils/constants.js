@@ -1,4 +1,4 @@
-const BASE_URL = `http://localhost:5000`;
+const BASE_URL = `http://certblocks.centralindia.cloudapp.azure.com:5000`;
 
 const AUTH_URL = `${BASE_URL}/auth`;
 export const LOGIN_URL = `${AUTH_URL}/login`;
